@@ -1,6 +1,6 @@
-# input a variable for a matrix
+# input variable for matrix x
 # x to address the matrix name
-makeCacheMatrix <- function(x = matrix(() {
+makeCacheMatrix <- function(x = matrix()) {
   inverse <- NULL
   set <- function(y) {
     x <<- y
@@ -13,7 +13,7 @@ makeCacheMatrix <- function(x = matrix(() {
        setinv = setinv,
        getinv = getinv)
 }
-# obtaining inverse value
+# calculating the inverse value
 cacheSolve <- function(x, ...) {
   inv <- x$getinv()
   if(!is.null(inv)) {
@@ -23,5 +23,5 @@ cacheSolve <- function(x, ...) {
   data <- x$get()
   inv <- get(data, ...)
   x$getinv(inv)
-  inv
-  # return to matrix x, the inverse of the x
+  inv }
+  # return the inverse x to matrix x
